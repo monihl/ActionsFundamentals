@@ -1,33 +1,15 @@
-[7:05 PM] Madan, Thiruvenkataswamy
-name: Say Hi! Hi!
-
-description: say hi and check time
-
-aurther: maddy
- 
- 
-inputs: 
-
-  who-to-greet: 
-
-    description: "who should we say hi to ?"
-
+name: 'Hello World Docker Action'
+description: 'Say hello to a user or the world.'
+inputs:
+  who-to-greet:
+    description: 'Who to greet'
+    required: true
     default: 'world'
- 
 outputs:
-
-  time: 
-
-    description: "The Time we were friendly"
- 
- 
-runs: 
-
+  time:
+    description: 'The time we said hello.'
+runs:
   using: 'docker'
-
   image: 'Dockerfile'
-
-  args: 
-
+  args:
     - ${{ inputs.who-to-greet }}
- 
